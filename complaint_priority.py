@@ -12,7 +12,9 @@ def priority_score(category: str, days_open: int) -> int:
     return min(base + escalation, 5)
 
 def priority_label(score: int) -> str:
-
+    """Convert a priority score into a simple label."""
+    if score >= 5:
+        return "HIGH"
     elif score >= 3:
         return "MEDIUM"
     else:
